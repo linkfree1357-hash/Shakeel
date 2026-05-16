@@ -90,10 +90,15 @@ form.addEventListener("submit", function(e){
 📞 Phone: ${phone}
 🏠 Address: ${address}
 
+💚 You have successfully:
 ✔ Joined WhatsApp Group
 ✔ Followed Facebook Page
 
-🎁 Welcome to Shakeel Store Family! 😊`;
+🎁 Stay tuned for amazing opening gifts & offers!
+
+✨ We are happy to welcome you to Shakeel Store family! ✨
+
+😊 Have a great day!`;
 
   const url =
   `https://wa.me/94788350661?text=${encodeURIComponent(message)}`;
