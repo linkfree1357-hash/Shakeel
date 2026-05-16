@@ -1,123 +1,142 @@
-// ========================= script.js =========================
+// ========================= SHAKEEL STORE JS =========================
 
-// Button status
+// Step tracking
 let whatsappClicked = false;
 let facebookClicked = false;
 
 // Elements
 const whatsappBtn = document.getElementById("whatsappBtn");
 const facebookBtn = document.getElementById("facebookBtn");
-
 const submitBtn = document.getElementById("submitBtn");
-
 const statusBox = document.getElementById("statusBox");
-
 const form = document.getElementById("registrationForm");
-
 const popup = document.getElementById("popup");
 
-// WhatsApp Click
+// ========================= WHATSAPP CLICK =========================
 whatsappBtn.addEventListener("click", () => {
 
   whatsappClicked = true;
 
   whatsappBtn.style.opacity = "0.7";
 
+  whatsappBtn.innerHTML = "✔ WhatsApp Group Joined";
+
   checkUnlock();
 
 });
 
-// Facebook Click
+// ========================= FACEBOOK CLICK =========================
 facebookBtn.addEventListener("click", () => {
 
   facebookClicked = true;
 
   facebookBtn.style.opacity = "0.7";
 
+  facebookBtn.innerHTML = "✔ Facebook Followed";
+
   checkUnlock();
 
 });
 
-// Unlock Submit Button
+// ========================= UNLOCK SUBMIT =========================
 function checkUnlock(){
 
   if(whatsappClicked && facebookClicked){
 
     submitBtn.disabled = false;
-
     submitBtn.classList.add("active");
 
     statusBox.innerHTML =
-    "✅ Both steps completed. Submit button unlocked.";
+    "✅ All steps completed! You can now submit your registration.";
 
-    statusBox.style.background = "#eaffea";
-
-    statusBox.style.color = "#008000";
+    statusBox.style.background = "#e8ffe8";
+    statusBox.style.color = "#0a7a0a";
+    statusBox.style.fontWeight = "600";
 
   }
-
 }
 
-// Submit
+// ========================= FORM SUBMIT =========================
 form.addEventListener("submit", function(e){
 
   e.preventDefault();
 
-  // Inputs
+  // Get values
   const name = document.getElementById("name").value.trim();
-
   const phone = document.getElementById("phone").value.trim();
-
   const address = document.getElementById("address").value.trim();
 
-  // Validation
-  if(name === "" || phone === "" || address === ""){
-
-    alert("Please fill all fields.");
-
+  // ================= VALIDATION =================
+  if(!name || !phone || !address){
+    alert("⚠ Please fill all fields!");
     return;
-
   }
 
-  // Phone Validation
   const phoneRegex = /^[0-9+\-\s]{9,15}$/;
 
   if(!phoneRegex.test(phone)){
-
-    alert("Please enter valid phone number.");
-
+    alert("⚠ Please enter valid phone number!");
     return;
-
   }
 
-  // Message
+  if(!whatsappClicked || !facebookClicked){
+    alert("⚠ Please complete WhatsApp & Facebook steps!");
+    return;
+  }
+
+  // ================= WHATSAPP MESSAGE =================
   const message =
-`Hello Shakeel Store,
+`🎉 Shakeel Store Grand Opening Registration 🎉
 
-New Registration Details:
+🙏 Thank you for registering with us!
 
-Name: ${name}
-Phone: ${phone}
-Address: ${address}
+👤 Name: ${name}
+📞 Phone: ${phone}
+🏠 Address: ${address}
 
-I joined the WhatsApp group and followed the Facebook page.`;
+💚 You have successfully:
+✔ Joined WhatsApp Group
+✔ Followed Facebook Page
 
-  // Encode
+🎁 Stay tuned for amazing opening gifts & offers!
+
+✨ We are happy to welcome you to Shakeel Store family! ✨
+
+😊 Have a great day!`;
+
   const encodedMessage = encodeURIComponent(message);
 
-  // WhatsApp URL
   const whatsappURL =
-`https://wa.me/94788350661?text=${encodedMessage}`;
+  `https://wa.me/94788350661?text=${encodedMessage}`;
 
-  // Show Popup
+  // ================= POPUP =================
   popup.classList.add("show");
 
-  // Redirect
+  // ================= REDIRECT =================
   setTimeout(() => {
 
     window.open(whatsappURL, "_blank");
 
     popup.classList.remove("show");
+
+    // RESET FORM
+    form.reset();
+
+    submitBtn.disabled = true;
+    submitBtn.classList.remove("active");
+
+    whatsappClicked = false;
+    facebookClicked = false;
+
+    whatsappBtn.style.opacity = "1";
+    facebookBtn.style.opacity = "1";
+
+    whatsappBtn.innerHTML = `<i class="fa-brands fa-whatsapp"></i> Join WhatsApp Group`;
+    facebookBtn.innerHTML = `<i class="fa-brands fa-facebook-f"></i> Follow Facebook Page`;
+
+    statusBox.innerHTML = "Complete both steps to unlock submit button";
+    statusBox.style.background = "#fff3f3";
+    statusBox.style.color = "#c40000";
 
   }, 2000);
 
