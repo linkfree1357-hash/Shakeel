@@ -1,0 +1,250 @@
+<!-- ========================= index.html ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Shakeel Store Grand Opening</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css"/>
+
+</head>
+
+<body>
+
+  <!-- Floating Liquid Background -->
+  <div class="liquid liquid1"></div>
+  <div class="liquid liquid2"></div>
+  <div class="liquid liquid3"></div>
+
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- Top Hero -->
+    <section class="hero">
+
+      <img src="logo.png" alt="Shakeel Store Logo" class="logo"/>
+
+      <h1>Shakeel Store Grand Opening</h1>
+
+      <p class="subtitle">
+        Register now and stay connected for exciting offers,
+        opening gifts, and future updates.
+      </p>
+
+    </section>
+
+    <!-- Step Section -->
+    <section class="steps-card">
+
+      <h2>How To Register</h2>
+
+      <div class="step-box">
+
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            Fill your details
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            Join WhatsApp Group
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            Follow Facebook Page
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            Submit button will unlock automatically
+          </div>
+        </div>
+
+      </div>
+
+      <div class="important-note">
+        <i class="fa-solid fa-circle-info"></i>
+        You must open BOTH WhatsApp and Facebook links to enable the submit button.
+      </div>
+
+    </section>
+
+    <!-- Registration Card -->
+    <section class="form-card">
+
+      <h2>Customer Registration</h2>
+
+      <form id="registrationForm">
+
+        <!-- Name -->
+        <div class="input-group">
+          <i class="fa-solid fa-user"></i>
+          <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            required
+          />
+        </div>
+
+        <!-- Phone -->
+        <div class="input-group">
+          <i class="fa-solid fa-phone"></i>
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number"
+            required
+          />
+        </div>
+
+        <!-- Address -->
+        <div class="input-group">
+          <i class="fa-solid fa-location-dot"></i>
+          <textarea
+            id="address"
+            placeholder="Address"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Social Buttons -->
+        <div class="social-buttons">
+
+          <!-- WhatsApp -->
+          <a
+            href="https://chat.whatsapp.com/CjPinLzhTqe9XqeSSYPgiA"
+            target="_blank"
+            class="social-btn whatsapp"
+            id="whatsappBtn"
+          >
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            <div>
+              <span class="btn-title">Join WhatsApp Group</span>
+              <small>Required Step</small>
+            </div>
+
+          </a>
+
+          <!-- Facebook -->
+          <a
+            href="https://www.facebook.com/share/1CT9At2GGm/"
+            target="_blank"
+            class="social-btn facebook"
+            id="facebookBtn"
+          >
+
+            <i class="fa-brands fa-facebook-f"></i>
+
+            <div>
+              <span class="btn-title">Follow Facebook Page</span>
+              <small>Required Step</small>
+            </div>
+
+          </a>
+
+        </div>
+
+        <!-- Status -->
+        <div class="status-box" id="statusBox">
+          Complete both steps to unlock submit button
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" id="submitBtn" disabled>
+          Submit Registration
+        </button>
+
+      </form>
+
+    </section>
+
+    <!-- Gifts -->
+    <!-- ========================= GIFT SECTION ========================= -->
+
+<section class="gift-section">
+
+  <h2>Opening Gifts</h2>
+
+  <div class="gift-grid">
+
+    <!-- Gift 1 -->
+    <div class="gift-card">
+      <img src="photo1.jpg" alt="Gift 1">
+      <p>Special Opening Gift</p>
+    </div>
+
+    <!-- Gift 2 -->
+    <div class="gift-card">
+      <img src="photo2.jpg" alt="Gift 2">
+      <p>Special Opening Gift</p>
+    </div>
+
+    <!-- Gift 3 -->
+    <div class="gift-card">
+      <img src="photo3.jpg" alt="Gift 3">
+      <p>Special Opening Gift</p>
+    </div>
+
+    <!-- Gift 4 -->
+    <div class="gift-card">
+      <img src="photo4.jpg" alt="Gift 4">
+      <p>Special Opening Gift</p>
+    </div>
+
+    <!-- Gift 5 -->
+    <div class="gift-card">
+      <img src="photo5.jpg" alt="Gift 5">
+      <p>Special Opening Gift</p>
+    </div>
+
+  </div>
+
+</section>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- Success Popup -->
+  <div class="popup" id="popup">
+
+    <div class="popup-content">
+
+      <div class="success-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <h3>Registration Successful</h3>
+
+      <p>Redirecting to WhatsApp...</p>
+
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>

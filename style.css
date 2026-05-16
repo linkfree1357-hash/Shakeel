@@ -1,0 +1,493 @@
+/* ========================= style.css ========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#ffffff;
+  overflow-x:hidden;
+  color:#111;
+  min-height:100vh;
+  position:relative;
+}
+
+/* ========================= LIQUID BACKGROUND ========================= */
+
+.liquid{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(70px);
+  z-index:-1;
+  opacity:0.5;
+}
+
+.liquid1{
+  width:300px;
+  height:300px;
+  background:#ff1e1e;
+  top:-100px;
+  left:-100px;
+  animation:move1 8s infinite alternate;
+}
+
+.liquid2{
+  width:250px;
+  height:250px;
+  background:#ff4d4d;
+  right:-80px;
+  top:300px;
+  animation:move2 10s infinite alternate;
+}
+
+.liquid3{
+  width:250px;
+  height:250px;
+  background:#ff8080;
+  bottom:-100px;
+  left:100px;
+  animation:move3 12s infinite alternate;
+}
+
+@keyframes move1{
+  100%{
+    transform:translate(80px,100px);
+  }
+}
+
+@keyframes move2{
+  100%{
+    transform:translate(-100px,-80px);
+  }
+}
+
+@keyframes move3{
+  100%{
+    transform:translate(100px,-60px);
+  }
+}
+
+/* ========================= CONTAINER ========================= */
+
+.container{
+  width:100%;
+  max-width:500px;
+  margin:auto;
+  padding:20px;
+}
+
+/* ========================= HERO ========================= */
+
+.hero{
+  text-align:center;
+  padding-top:30px;
+}
+
+.logo{
+  width:300px;
+  margin-bottom:20px;
+  animation:logoAnimation 1s ease;
+}
+
+@keyframes logoAnimation{
+  from{
+    opacity:0;
+    transform:translateY(-30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.hero h1{
+  font-size:2rem;
+  color:#c40000;
+  margin-bottom:10px;
+  font-weight:700;
+}
+
+.subtitle{
+  color:#555;
+  line-height:1.6;
+  font-size:15px;
+}
+
+/* ========================= CARDS ========================= */
+
+.steps-card,
+.form-card{
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.5);
+  border-radius:25px;
+  padding:25px;
+  margin-top:25px;
+  box-shadow:0 10px 35px rgba(255,0,0,0.08);
+}
+
+/* ========================= STEPS ========================= */
+
+.steps-card h2,
+.form-card h2,
+.gift-section h2{
+  text-align:center;
+  margin-bottom:20px;
+  color:#c40000;
+}
+
+.step-box{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.step{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  background:#fff;
+  padding:14px;
+  border-radius:18px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.step-number{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#ff1e1e;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+
+.step-content{
+  font-weight:500;
+}
+
+.important-note{
+  margin-top:20px;
+  background:#ffeaea;
+  color:#c40000;
+  padding:14px;
+  border-radius:16px;
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* ========================= INPUTS ========================= */
+
+.input-group{
+  position:relative;
+  margin-bottom:18px;
+}
+
+.input-group i{
+  position:absolute;
+  left:15px;
+  top:18px;
+  color:#c40000;
+}
+
+.input-group input,
+.input-group textarea{
+  width:100%;
+  padding:16px 16px 16px 45px;
+  border:none;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 5px 15px rgba(0,0,0,0.06);
+  outline:none;
+  transition:0.3s;
+  font-size:15px;
+}
+
+.input-group textarea{
+  min-height:100px;
+  resize:none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+  transform:translateY(-2px);
+  box-shadow:0 5px 20px rgba(255,0,0,0.15);
+}
+
+/* ========================= SOCIAL BUTTONS ========================= */
+
+.social-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin-top:20px;
+}
+
+.social-btn{
+  text-decoration:none;
+  color:white;
+  border-radius:20px;
+  padding:18px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  transition:0.3s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.social-btn:hover{
+  transform:translateY(-3px);
+}
+
+.social-btn i{
+  font-size:24px;
+}
+
+.whatsapp{
+  background:linear-gradient(135deg,#25D366,#128C7E);
+}
+
+.facebook{
+  background:linear-gradient(135deg,#1877F2,#0d47a1);
+}
+
+.btn-title{
+  display:block;
+  font-weight:600;
+}
+
+.social-btn small{
+  opacity:0.9;
+}
+
+/* ========================= STATUS ========================= */
+
+.status-box{
+  margin-top:18px;
+  background:#fff3f3;
+  color:#c40000;
+  text-align:center;
+  padding:14px;
+  border-radius:15px;
+  font-size:14px;
+  font-weight:500;
+}
+
+/* ========================= SUBMIT ========================= */
+
+#submitBtn{
+  width:100%;
+  margin-top:20px;
+  padding:18px;
+  border:none;
+  border-radius:20px;
+  background:#c40000;
+  color:white;
+  font-size:16px;
+  font-weight:600;
+  cursor:not-allowed;
+  opacity:0.4;
+  transition:0.3s;
+}
+
+#submitBtn.active{
+  opacity:1;
+  cursor:pointer;
+  animation:glow 1.5s infinite alternate;
+}
+
+#submitBtn.active:hover{
+  transform:translateY(-3px);
+}
+
+@keyframes glow{
+  from{
+    box-shadow:0 0 10px rgba(255,0,0,0.2);
+  }
+  to{
+    box-shadow:0 0 25px rgba(255,0,0,0.5);
+  }
+}
+
+/* ========================= GIFTS ========================= */
+
+.gift-section{
+  margin-top:35px;
+  margin-bottom:40px;
+}
+
+.gift-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+
+.gift-card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.gift-card:hover{
+  transform:translateY(-5px);
+}
+
+.gift-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.gift-card:hover img{
+  transform:scale(1.08);
+}
+
+.gift-card p{
+  padding:14px;
+  text-align:center;
+  font-weight:600;
+}
+
+/* ========================= POPUP ========================= */
+
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s;
+}
+
+.popup.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.popup-content{
+  background:white;
+  padding:30px;
+  border-radius:25px;
+  width:90%;
+  max-width:320px;
+  text-align:center;
+  animation:popupAnimation 0.4s ease;
+}
+
+@keyframes popupAnimation{
+  from{
+    transform:scale(0.8);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.success-icon{
+  width:70px;
+  height:70px;
+  background:#25D366;
+  color:white;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:auto;
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+/* ========================= DESKTOP ========================= */
+
+@media(min-width:768px){
+
+  .container{
+    max-width:650px;
+  }
+
+  .gift-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
+/* ========================= GIFTS ========================= */
+
+.gift-section{
+  margin-top:35px;
+  margin-bottom:40px;
+}
+
+.gift-section h2{
+  text-align:center;
+  margin-bottom:20px;
+  color:#c40000;
+}
+
+.gift-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+
+/* Tablet */
+@media(min-width:600px){
+
+  .gift-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+/* Desktop */
+@media(min-width:992px){
+
+  .gift-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
+.gift-card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.gift-card:hover{
+  transform:translateY(-5px);
+}
+
+.gift-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.gift-card:hover img{
+  transform:scale(1.08);
+}
+
+.gift-card p{
+  padding:14px;
+  text-align:center;
+  font-weight:600;
+}
